@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="js/jquery.min.js"></script>	
+	<link rel="stylesheet" href="css/css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Inicia</title>
+	<style>
+
+	body{
+	}
+	.divCont{
+		max-height: 400px;
+	}
+	.navCol{
+		background-color: #388E3C;
+	}
+	.branC{
+		color: white;
+	}
+	.navbar-default .navbar-brand{
+		color: white;
+	}
+	/*Img carrusel*/
+	.imgCar{
+		width: 100%;
+		max-height: 300px;
+	}
+
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default navCol">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand branC" href="">Campañas de Vacunación</a>
+	    </div>
+	  </div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<div class="">
+		<br>
+		<br>
+		<div class="col-md-6 col-md-offset-1 divCont">
+			<br>
+			<!--Bootstrap Carrusel-->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicadores -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+
+			  <!-- Texto en slides -->
+			  <div class="carousel-inner" role="listbox">
+				
+				<!-- Texto/img slide principal -->
+			    <div class="item active">
+			      <img class="imgCar" src="img/car1.jpg" alt="...">
+			      <div class="carousel-caption">
+			        <h3>Crea una cuenta</h3>
+			        <p>Empieza a utilizar esta plataforma que te permite llevar un control de campañas de vacunación. ¡Es Gratis!</p>
+			      </div>
+			    </div>
+				<!-- Segundo texto/img slide -->
+			    <div class="item">
+			      <img class="imgCar" src="img/car2.jpg" alt="...">
+			      <div class="carousel-caption">
+			        <h3>Campañas</h3>
+			        <p>Puedes crear campañas de vacunación, es facil, rapido y ¡Gratis!</p>
+			      </div>
+			    </div>
+				<!-- Tercer texto/img slide -->
+			    <div class="item">
+			      <img class="imgCar" src="img/car3.jpg" alt="...">
+			      <div class="carousel-caption">
+			        <h3>Mascotas</h3>
+			        <p>Da de alta y agregalas a tus campañas de vacunación.</p>
+			      </div>
+			    </div>
+
+			  </div>
+
+			  <!-- Controles slide -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+
+		<!--Seccion para logeo-->
+		<div class="col-md-3 col-md-offset-1 divCont">
+			<h1 class="text-center">Inicio de Sesión</h1>
+			<form action="db/login.php">
+				<div class="form-group">
+					<input class="form-control" type="text" name = "username" required placeholder="Usuario">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password" name="password" required placeholder="Contraseña">	
+				</div>
+				<div class="col-md-4 col-md-offset-4 form-group">
+					<input class="form-control btn btn-success" type="submit" value="Entrar">						
+				</div>
+				<br>
+				<br>
+				<br>
+				<!-- opción para crear nueva cuenta -->
+				<p class="text-center"><a class=""href="" data-toggle="modal" data-target="#modNewUser">¿Aún no tienes una cuenta?</a></p>
+			</form>			
+		</div>
+		
+	</div>
+	<!--Fin div principal-->
+
+	<!--MODAL NUEVA CUENTA DE USUARIO-->
+	<div class="modal fade" id="modNewUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="exampleModalLabel">Registrate</h4>
+	      </div>
+	      <div class="modal-body">
+	        <form action="db/new-user.php">
+	          <div class="form-group">
+	            <input class="form-control" type="text" name="nameU" placeholder="Nombre">
+	          </div>
+	          <div class="form-group">
+	            <input type="text" class="form-control" name="lastNameU" placeholder="Apellido(s)">
+	          </div>
+	          <div class="form-group">
+	            <input type="text" class="form-control" name="aliasU" placeholder="Nombre de Usuario">
+	          </div>
+	          <div class="form-group">
+	            <input type="password" class="form-control" name="passU" placeholder="Contraseña">
+	          </div>
+	          <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+		        <button type="submit" class="btn btn-success">Registrar</button>
+		      </div>
+	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--FIN MODAL NUEVA CUENTA DE USUARIO-->
+
+
+	<script>
+	//SCRIP modal de nueva cuenta
+	$('.carousel').carousel()
+	$('#modDelPet').on('show.bs.modal')
+
+	</script>
+
+</body>
+</html>
